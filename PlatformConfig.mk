@@ -14,24 +14,26 @@
 
 TARGET_ARCH_VARIANT := armv8-2a
 TARGET_CPU_ABI := arm64-v8a
-# Switch to Cortex-A77 when it becomes available!
 TARGET_CPU_VARIANT_RUNTIME := generic
 
 TARGET_2ND_ARCH_VARIANT := armv8-2a
 TARGET_2ND_CPU_ABI := armeabi-v7a
-# Switch to Cortex-A77 when it becomes available!
 TARGET_2ND_CPU_VARIANT_RUNTIME := generic
 
 BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 4096
-BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
-BOARD_RAMDISK_OFFSET     := 0x02000000
+BOARD_KERNEL_TAGS_OFFSET := 0x00000100
+BOARD_RAMDISK_OFFSET     := 0x01000000
 
 BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1
 BOARD_KERNEL_CMDLINE += androidboot.bootdevice=1d84000.ufshc
-BOARD_KERNEL_CMDLINE += swiotlb=2048
+BOARD_KERNEL_CMDLINE += swiotlb=noforce
 BOARD_KERNEL_CMDLINE += service_locator.enable=1
 BOARD_KERNEL_CMDLINE += console=null
+BOARD_KERNEL_CMDLINE += androidboot.memcg=1
+
+# https://source.android.com/docs/core/bootloader/implementing-bootconfig
+BOARD_KERNEL_CMDLINE += bootconfig
 
 # Serial console
 #BOARD_KERNEL_CMDLINE += earlycon=msm_geni_serial,0xa90000
