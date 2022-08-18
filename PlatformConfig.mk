@@ -83,6 +83,7 @@ BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 104857600
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 BOARD_COPY_BOOT_IMAGE_TO_TARGET_FILES :=
+BOARD_USES_FULL_RECOVERY_IMAGE := true
 
 # https://source.android.com/devices/bootloader/partitions/vendor-boot-partitions#build-support
 # >= 3 is required for (and turns on) PRODUCT_BUILD_VENDOR_BOOT_IMAGE
