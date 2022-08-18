@@ -30,7 +30,6 @@ BOARD_KERNEL_CMDLINE += earlycon=simplefb,0xb8000000,1096,2560
 # Serial console
 #BOARD_KERNEL_CMDLINE += earlycon=msm_geni_serial,0xa90000
 
-BOARD_BOOTCONFIG += androidboot.bootdevice=1d84000.ufshc
 BOARD_BOOTCONFIG += androidboot.usbcontroller=a600000.dwc3
 
 TARGET_RECOVERY_WIPE := $(PLATFORM_COMMON_PATH)/rootdir/recovery.wipe
