@@ -34,6 +34,7 @@ BOARD_KERNEL_CMDLINE += earlycon=simplefb,0xb8000000,1096,2560
 BOARD_KERNEL_CMDLINE += bootconfig
 
 BOARD_BOOTCONFIG += androidboot.bootdevice=1d84000.ufshc
+BOARD_BOOTCONFIG += androidboot.usbcontroller=a600000.dwc3
 
 TARGET_RECOVERY_WIPE := $(PLATFORM_COMMON_PATH)/rootdir/recovery.wipe
 TARGET_RECOVERY_FSTAB ?= $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/fstab.nagara
