@@ -25,10 +25,7 @@ BOARD_KERNEL_PAGESIZE    := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET     := 0x01000000
 
-BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1
-BOARD_KERNEL_CMDLINE += swiotlb=noforce
-BOARD_KERNEL_CMDLINE += service_locator.enable=1
-BOARD_KERNEL_CMDLINE += console=null
+BOARD_KERNEL_CMDLINE += earlycon=simplefb,0xb8000000,1096,2560
 
 # Serial console
 #BOARD_KERNEL_CMDLINE += earlycon=msm_geni_serial,0xa90000
@@ -36,7 +33,6 @@ BOARD_KERNEL_CMDLINE += console=null
 # https://source.android.com/docs/core/bootloader/implementing-bootconfig
 BOARD_KERNEL_CMDLINE += bootconfig
 
-BOARD_BOOTCONFIG += androidboot.memcg=1
 BOARD_BOOTCONFIG += androidboot.bootdevice=1d84000.ufshc
 
 TARGET_RECOVERY_WIPE := $(PLATFORM_COMMON_PATH)/rootdir/recovery.wipe
