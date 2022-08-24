@@ -241,6 +241,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1-service-qti.rc \
     android.hardware.keymaster@4.1.vendor \
+    android.hardware.security.keymint-service-qti.rc \
     vendor.qti.hardware.qseecom@1.0-service.rc
 
 PRODUCT_PROPERTY_OVERRIDES += \
