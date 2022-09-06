@@ -120,6 +120,11 @@ AB_OTA_PARTITIONS += \
     vendor \
     vendor_boot
 
+PRODUCT_PACKAGES += \
+    linker.vendor_ramdisk \
+    tune2fs.vendor_ramdisk \
+    resize2fs.vendor_ramdisk
+
 # Dynamic Partitions: build fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
