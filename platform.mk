@@ -125,6 +125,10 @@ PRODUCT_PACKAGES += \
     tune2fs.vendor_ramdisk \
     resize2fs.vendor_ramdisk
 
+PRODUCT_PACKAGES += \
+    shell_and_utilities_vendor_ramdisk \
+    adbd.vendor_ramdisk
+
 # Dynamic Partitions: build fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
