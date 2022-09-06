@@ -1,5 +1,13 @@
 firmware_directories /vendor/firmware_mnt/image/
 
+subsystem dma_heap
+    devname uevent_devpath
+    dirname /dev/dma_heap
+
+subsystem mem_buf_vm
+    devname uevent_devpath
+    dirname /dev/mem_buf_vm
+
 /dev/genlock              0666   system     system
 /dev/wlan                 0660   wifi       wifi
 /dev/kgsl-3d0             0666   system     system
@@ -132,6 +140,10 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/wcd_dsp0_control     0660   system     audio
 /dev/wcd-dsp-glink        0660   system     audio
 /sys/devices/virtual/smdpkt/smdcntl* open_timeout 0664 radio  radio
+
+/dev/mem_buf_vm/*         0444   system     system
+/dev/dma_heap/qcom,*      0444   system     system
+/dev/membuf               0664   system     system
 
 # sensors
 /sys/devices/virtual/input/input*        poll           0660    input    system
