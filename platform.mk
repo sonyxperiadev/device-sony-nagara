@@ -341,6 +341,37 @@ PRODUCT_PACKAGES += \
 
 # Platform SSC Sensors
 PRODUCT_PACKAGES += \
+    waipio_ak991x_0.json \
+    waipio_bmp380_0.json \
+    waipio_bu52053nvx_0.json \
+    waipio_default_sensors.json \
+    waipio_dynamic_sensors.json \
+    waipio_hdk_ak991x_0.json \
+    waipio_hdk_lps22hh_0.json \
+    waipio_hdk_lsm6dst_0.json \
+    waipio_hdk_lsm6dst_1.json \
+    waipio_hdk_tmd3702_0.json \
+    waipio_irq.json \
+    waipio_lps22hh_0.json \
+    waipio_lsm6dso_0.json \
+    waipio_lsm6dst_0.json \
+    waipio_lsm6dst_1.json \
+    waipio_mtp_ak991x_0.json \
+    waipio_mtp_lsm6dst_0.json \
+    waipio_mtp_lsm6dst_1.json \
+    waipio_power_0.json \
+    waipio_qrd_ak991x_0.json \
+    waipio_qrd_lps22hh_0.json \
+    waipio_qrd_lsm6dst_0.json \
+    waipio_qrd_sx932x_0.json \
+    waipio_qrd_tmd3702_0.json \
+    waipio_shtw2_0.json \
+    waipio_stk3x3x_0.json \
+    waipio_sx932x_0.json \
+    waipio_tmd3702_0.json \
+    waipio_vertigo_ak991x_0.json \
+    waipio_vertigo_lsm6dst_0.json \
+    waipio_vertigo_lsm6dst_1.json
 
 # Other nagara-specific sensors
 PRODUCT_PACKAGES += \
