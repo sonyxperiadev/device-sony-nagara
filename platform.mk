@@ -250,6 +250,7 @@ PRODUCT_PACKAGES += \
 # Keymaster 4 passthrough service init file
 # (executable is on odm)
 PRODUCT_PACKAGES += \
+    android.hardware.security.keymint-V1-ndk_platform \
     android.hardware.keymaster@4.1-service-qti.rc \
     android.hardware.keymaster@4.1.vendor \
     android.hardware.security.keymint-service-qti.rc \
