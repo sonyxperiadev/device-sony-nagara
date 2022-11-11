@@ -30,6 +30,9 @@ SONY_ROOT := $(PLATFORM_COMMON_PATH)/rootdir
 DEVICE_PACKAGE_OVERLAYS += \
     $(PLATFORM_COMMON_PATH)/overlay
 
+# DSP HW
+TARGET_USES_DSP_SERVICE := true
+
 # RIL
 TARGET_PER_MGR_ENABLED := true
 
@@ -272,6 +275,7 @@ PRODUCT_PACKAGES += \
 # hardware.ssc.so links against display mappers, of which
 # the interface libraries are explicitly included here:
 PRODUCT_PACKAGES += \
+    vendor.qti.hardware.dsp@1.0-service.rc \
     android.hardware.sensors@2.1-service.multihal \
     vendor.qti.hardware.display.mapper@1.1.vendor \
     vendor.qti.hardware.display.mapper@3.0.vendor
