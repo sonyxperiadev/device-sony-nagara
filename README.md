@@ -10,6 +10,7 @@ Android device configuration for the nagara platform (**SM8450**).
 | Device | Codename |
 |-|:-:|
 | Xperia 1 IV | [pdx223](https://github.com/sonyxperiadev/device-sony-pdx223) |
+| Xperia 5 IV | [pdx224](https://github.com/sonyxperiadev/device-sony-pdx224) |
 
 ### Build instructions
 
