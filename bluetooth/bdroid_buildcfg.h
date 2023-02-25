@@ -36,6 +36,10 @@ static inline const char* getBTDefaultName()
         return "Xperia 1 IV";
     }
 
+    if (!strcmp("pdx224", device)) {
+        return "Xperia 5 IV";
+    }
+
     return "Xperia";
 }
 
