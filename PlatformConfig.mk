@@ -26,7 +26,7 @@ BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET     := 0x01000000
 
 # Serial console
-#BOARD_KERNEL_CMDLINE += earlycon=msm_geni_serial,0xa90000
+#BOARD_KERNEL_CMDLINE += earlycon=msm_geni_serial,0x99c000
 
 BOARD_BOOTCONFIG += androidboot.usbcontroller=a600000.dwc3
 
