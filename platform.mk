@@ -260,6 +260,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 DEVICE_MANIFEST_FILE += \
     $(PLATFORM_COMMON_PATH)/vintf/android.hw.keymaster_v4.1.xml \
+    $(PLATFORM_COMMON_PATH)/vintf/android.hardware.security.keymint-service-qti.xml \
     $(PLATFORM_COMMON_PATH)/vintf/vendor.qti.hardware.qseecom_v1.0.xml
 
 # GPS
