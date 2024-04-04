@@ -243,23 +243,20 @@ PRODUCT_PACKAGES += \
     hwcomposer.sm8450 \
     memtrack.default
 
-# Keymaster 4 passthrough service init file
+# KeyMint passthrough service init file
 # (executable is on odm)
 PRODUCT_PACKAGES += \
     android.hardware.security.keymint-V1-ndk_platform.vendor \
     libkeymaster_messages.vendor \
-    android.hardware.keymaster@4.1-service-qti.rc \
     android.hardware.keymaster@4.1.vendor \
     android.hardware.security.keymint-service-qti.rc \
     vendor.qti.hardware.qseecom@1.0-service.rc
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.keymaster.version=v4.1 \
     ro.crypto.dm_default_key.options_format.version=2 \
     ro.crypto.volume.metadata.method=dm-default-key
 
 DEVICE_MANIFEST_FILE += \
-    $(PLATFORM_COMMON_PATH)/vintf/android.hw.keymaster_v4.1.xml \
     $(PLATFORM_COMMON_PATH)/vintf/android.hardware.security.keymint-service-qti.xml \
     $(PLATFORM_COMMON_PATH)/vintf/vendor.qti.hardware.qseecom_v1.0.xml
 
