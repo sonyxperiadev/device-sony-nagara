@@ -140,6 +140,11 @@ subsystem mem_buf_vm
 /dev/wcd-dsp-glink        0660   system     audio
 /sys/devices/virtual/smdpkt/smdcntl* open_timeout 0664 radio  radio
 
+# audio
+/dev/aud_pasthru_adsp     0660   system     audio
+/dev/msm_audio_ion        0660   system     audio
+/dev/msm_audio_ion_cma    0660   system     audio
+
 /dev/mem_buf_vm/*         0444   system     system
 /dev/dma_heap/qcom,*      0444   system     system
 /dev/membuf               0664   system     system
