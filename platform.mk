@@ -221,12 +221,6 @@ PRODUCT_PACKAGES += \
     sound_trigger.primary.sm8450 \
     audio.primary.sm8450
 
-# AGM
-PRODUCT_PACKAGES += \
-    libagm_compress_plugin \
-    libagm_mixer_plugin \
-    libagm_pcm_plugin
-
 # Camera
 PRODUCT_PACKAGES += \
     model3.dat
