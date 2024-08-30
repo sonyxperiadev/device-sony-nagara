@@ -68,17 +68,17 @@ WCNSS_FILTER_USES_SIBS := true
 NXP_CHIP_FW_TYPE := PN557
 
 # Audio
-TARGET_USES_AUDIOREACH := true
 AUDIO_FEATURE_ENABLED_AGM_HIDL := true
-AUDIO_FEATURE_ENABLED_PAL_HIDL := true
-BOARD_SUPPORTS_SOUND_TRIGGER := true
-AUDIO_FEATURE_ENABLED_INSTANCE_ID := true
-AUDIO_FEATURE_ENABLED_HDMI_EDID := true
-AUDIO_FEATURE_ENABLED_HDMI_PASSTHROUGH := true
-AUDIO_FEATURE_ENABLED_DISPLAY_PORT := true
-AUDIO_FEATURE_ENABLED_USB_BURST_MODE := true
-AUDIO_FEATURE_SONY_CIRRUS := true
+AUDIO_FEATURE_ENABLED_DLKM := false
+AUDIO_FEATURE_ENABLED_DTS_EAGLE := false
+AUDIO_FEATURE_ENABLED_GEF_SUPPORT := true
 AUDIO_FEATURE_ENABLED_GKI := true
+AUDIO_FEATURE_ENABLED_HW_ACCELERATED_EFFECTS := false
+AUDIO_FEATURE_ENABLED_INSTANCE_ID := true
+AUDIO_FEATURE_ENABLED_PAL_HIDL := true
+BOARD_USES_ALSA_AUDIO := true
+TARGET_USES_AUDIOREACH := true
+TARGET_USES_QCOM_MM_AUDIO := true
 
 # Dynamic Partitions: Enable DP
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -390,30 +390,26 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.qcom.bluetooth.soc=hastings
 
-# Audio - Android System
-PRODUCT_PROPERTY_OVERRIDES += \
-    aaudio.mmap_policy=2 \
-    aaudio.mmap_exclusive_policy=2 \
-    aaudio.hw_burst_min_usec=2000 \
-    af.fast_track_multiplier=1
-
 # Audio - QCOM HAL
 PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.audio.feature.concurrent_capture.enable=true \
-    vendor.audio.feature.compress_in.enable=true \
-    vendor.audio.feature.display_port.enable=true \
-    vendor.audio.feature.hdmi_edid.enable=true \
-    vendor.audio.feature.hdmi_passthrough.enable=true \
-    vendor.audio.offload.buffer.size.kb=32
+    vendor.audio_hal.period_size=192 \
+    vendor.audio.ull_record_period_multiplier=2 \
+    vendor.audio.offload.buffer.size.kb=32 \
+    vendor.audio.safx.pbe.enabled=false \
+    ro.bluetooth.a2dp_offload.supported=true \
+    persist.bluetooth.a2dp_offload.disabled=false \
+    vendor.audio.volume.headset.gain.depcal=true \
+    debug.c2.use_dmabufheaps=1
 
-# Audio - QCOM proprietary
+# Audio dynamic feature flags
 PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.audio.adm.buffering.ms=2
-
-# Audio - Sony specific
-PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.audio.feature.dynamic_ecns.enable=true \
-    vendor.audio.enable.cirrus.speaker=true
+    vendor.audio.feature.a2dp_offload.enable=true \
+    vendor.audio.feature.afe_proxy.enable=true \
+    vendor.audio.feature.battery_listener.enable=true \
+    vendor.audio.feature.hfp.enable=true \
+    vendor.audio.feature.kpi_optimize.enable=true \
+    vendor.audio.feature.dmabuf.cma.memory.enable=false \
+    vendor.audio.hdr.record.enable=false
 
 # USB controller setup
 PRODUCT_PROPERTY_OVERRIDES += \
