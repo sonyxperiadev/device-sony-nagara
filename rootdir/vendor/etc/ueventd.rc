@@ -165,6 +165,9 @@ subsystem mem_buf_vm
 # SSR devices
 /dev/subsys_*         0640   system     system
 
+# remoteproc devices
+/dev/remoteproc*          0640   system     system
+
 # BT
 /dev/hidraw*                                0666 system    system
 /dev/btpower                                0660 bluetooth bluetooth
