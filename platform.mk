@@ -263,22 +263,7 @@ PRODUCT_PACKAGES += \
 
 # Sensors init
 PRODUCT_PACKAGES += \
-    sscrpcd.rc \
     sdsp-sensorspdr.rc
-
-# Sensors
-# hardware.ssc.so links against display mappers, of which
-# the interface libraries are explicitly included here:
-PRODUCT_PACKAGES += \
-    vendor.qti.hardware.dsp@1.0-service.rc \
-    android.hardware.sensors@2.1-service.multihal \
-    vendor.qti.hardware.display.mapper@1.1.vendor \
-    vendor.qti.hardware.display.mapper@3.0.vendor
-
-# Sensors
-PRODUCT_PACKAGES += \
-    sns_reg_config \
-    hals.conf
 
 # SPU
 PRODUCT_PACKAGES += \
