@@ -92,6 +92,11 @@ TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
 TARGET_USES_DRM_PP := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 2
 
+# TEMP: Disable Fingerprint HAL until support for this platform
+# lands in HAL. Fixes incredible CPU usage:
+# https://github.com/sonyxperiadev/bug_tracker/issues/860
+TARGET_DEVICE_NO_FPC := true
+
 # Lights HAL: Backlight
 TARGET_USES_SDE := true
 
