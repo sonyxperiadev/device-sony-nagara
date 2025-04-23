@@ -242,6 +242,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
+    vendor.qti.camera.provider@2.7-aon-service_64.rc \
     model3.dat
 
 # GFX
@@ -375,9 +376,6 @@ PRODUCT_PACKAGES += \
 
 # Platform-specific sensor overlays
 PRODUCT_COPY_FILES += \
-
-# CAMERA
-TARGET_USES_QTI_CAMERA := true
 
 # Look for camera.qcom.so instead of camera.$(BOARD_TARGET_PLATFORM).so
 PRODUCT_PROPERTY_OVERRIDES += \
