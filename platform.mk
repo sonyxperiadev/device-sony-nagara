@@ -89,6 +89,10 @@ TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
 TARGET_USES_DRM_PP := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 2
 
+# Camera
+TARGET_USES_QTI_CAMERA := true
+QTI_CAMERA_PROVIDER_SERVICE := 2.7
+
 # TEMP: Disable Fingerprint HAL until support for this platform
 # lands in HAL. Fixes incredible CPU usage:
 # https://github.com/sonyxperiadev/bug_tracker/issues/860
