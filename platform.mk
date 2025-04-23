@@ -91,6 +91,7 @@ NUM_FRAMEBUFFER_SURFACE_BUFFERS := 2
 
 # Camera
 TARGET_USES_QTI_CAMERA := true
+TARGET_USES_AON_CAMERA := true
 QTI_CAMERA_PROVIDER_SERVICE := 2.7
 
 # TEMP: Disable Fingerprint HAL until support for this platform
