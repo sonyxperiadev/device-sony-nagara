@@ -43,11 +43,11 @@ WIFI_DRIVER_BUILT := qca_cld3
 WIFI_DRIVER_DEFAULT := qca_cld3
 BOARD_HAS_QCOM_WLAN := true
 BOARD_HOSTAPD_DRIVER := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_qcwcn
 BOARD_WLAN_DEVICE := qcwcn
 BOARD_WLAN_CHIP := wcn6740
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_qcwcn
+BOARD_HOSTAPD_PRIVATE_LIB := //hardware/qcom/wlan/$(BOARD_WLAN_CHIP)/qcwcn/wpa_supplicant_8_lib:lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := //hardware/qcom/wlan/$(BOARD_WLAN_CHIP)/qcwcn/wpa_supplicant_8_lib:lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 HOSTAPD_VERSION := VER_0_8_X
 WIFI_DRIVER_FW_PATH_AP  := "ap"
 WIFI_DRIVER_FW_PATH_P2P := "p2p"
@@ -59,7 +59,7 @@ WIFI_DRIVER_STATE_OFF := "OFF"
 WIFI_DRIVER_STATE_ON := "ON"
 
 # Add BOARD_WLAN_CHIP to soong_config
-$(call soong_config_set,qcom_wifi,board_wlan_chip,wcn6740)
+$(call soong_config_set,qcom_wifi,board_wlan_chip,$(BOARD_WLAN_CHIP))
 
 # BT definitions for Qualcomm solution
 BOARD_HAVE_BLUETOOTH := true
