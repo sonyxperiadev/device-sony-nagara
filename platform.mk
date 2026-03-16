@@ -30,6 +30,9 @@ SONY_ROOT := $(PLATFORM_COMMON_PATH)/rootdir
 DEVICE_PACKAGE_OVERLAYS += \
     $(PLATFORM_COMMON_PATH)/overlay
 
+# Build recovery image
+PRODUCT_BUILD_RECOVERY_IMAGE := true
+
 # DSP HW
 TARGET_USES_DSP_SERVICE := true
 
@@ -80,9 +83,6 @@ BOARD_USES_ALSA_AUDIO := true
 TARGET_USES_AUDIOREACH := true
 TARGET_USES_QCOM_MM_AUDIO := true
 
-# Dynamic Partitions: Enable DP
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
 # Display
 TARGET_HAS_HDR_DISPLAY := true
 TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
@@ -102,54 +102,8 @@ TARGET_DEVICE_NO_FPC := true
 # Lights HAL: Backlight
 TARGET_USES_SDE := true
 
-# A/B support
-AB_OTA_UPDATER := true
-
 # Platform has been launched on Android 12 (API level 31)
 PRODUCT_SHIPPING_API_LEVEL := 31
-
-# A/B OTA dexopt package
-PRODUCT_PACKAGES += \
-    otapreopt_script
-
-# A/B OTA dexopt update_engine hookup
-AB_OTA_POSTINSTALL_CONFIG += \
-    RUN_POSTINSTALL_system=true \
-    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
-    FILESYSTEM_TYPE_system=ext4 \
-    POSTINSTALL_OPTIONAL_system=true
-
-# A/B related packages
-PRODUCT_PACKAGES += \
-    update_engine \
-    update_engine_client \
-    update_engine_sideload \
-    update_verifier
-
-AB_OTA_PARTITIONS += \
-    boot \
-    dtbo \
-    product \
-    recovery \
-    system \
-    system_ext \
-    vbmeta \
-    vbmeta_system \
-    vendor \
-    vendor_boot
-
-PRODUCT_PACKAGES += \
-    linker.vendor_ramdisk \
-    tune2fs.vendor_ramdisk \
-    resize2fs.vendor_ramdisk
-
-PRODUCT_PACKAGES += \
-    shell_and_utilities_vendor_ramdisk \
-    adbd.vendor_ramdisk
-
-# Dynamic Partitions: build fastbootd
-PRODUCT_PACKAGES += \
-    fastbootd
 
 # Treble
 # Include vndk/vndk-sp/ll-ndk modules
@@ -158,10 +112,10 @@ PRODUCT_PACKAGES += \
 
 # Device Specific Permissions
 PRODUCT_COPY_FILES += \
-     frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.gyroscope.xml \
-     frameworks/native/data/etc/android.hardware.sensor.barometer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.barometer.xml \
-     frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepcounter.xml \
-     frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepdetector.xml
+    frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.gyroscope.xml \
+    frameworks/native/data/etc/android.hardware.sensor.barometer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.barometer.xml \
+    frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepcounter.xml \
+    frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepdetector.xml
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -464,6 +418,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
 $(call inherit-product, device/sony/common/common.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/compression.mk)
