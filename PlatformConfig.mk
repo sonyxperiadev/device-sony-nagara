@@ -30,21 +30,14 @@ BOARD_RAMDISK_OFFSET     := 0x01000000
 
 BOARD_BOOTCONFIG += androidboot.usbcontroller=a600000.dwc3
 
-TARGET_RECOVERY_WIPE := $(PLATFORM_COMMON_PATH)/rootdir/recovery.wipe
+# Recovery fstab
 TARGET_RECOVERY_FSTAB ?= $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/fstab.nagara
 
 # SELinux
 BOARD_VENDOR_SEPOLICY_DIRS += $(PLATFORM_COMMON_PATH)/sepolicy_platform
 
-# https://source.android.com/devices/bootloader/partitions/generic-boot#combinations, "Launch device with A/B recovery partition":
-BOARD_USES_RECOVERY_AS_BOOT :=
-BOARD_USES_GENERIC_KERNEL_IMAGE := true
-BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT :=
-BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
+# Partition information
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 104857600
-BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
-BOARD_COPY_BOOT_IMAGE_TO_TARGET_FILES :=
-BOARD_USES_FULL_RECOVERY_IMAGE := true
 
 # Set boot header version
 BOARD_BOOT_HEADER_VERSION := 4
