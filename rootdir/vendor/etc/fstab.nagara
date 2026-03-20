@@ -10,6 +10,7 @@ vendor                                     /vendor                 ext4    ro,ba
 odm                                        /odm                    ext4    ro,barrier=1,discard                                                  wait,slotselect,logical,first_stage_mount
 
 # Real first stage mount partitions
+/dev/block/by-name/boot                    /boot                   emmc    defaults                                                              slotselect,avb=boot,first_stage_mount
 /dev/block/by-name/metadata                /metadata               ext4    noatime,nosuid,nodev,discard                                          wait,check,formattable,first_stage_mount
 
 # Other Partitions
