@@ -185,10 +185,6 @@ PRODUCT_PACKAGES += \
     init.nagara.pwr \
     ueventd
 
-# Audio init
-PRODUCT_PACKAGES += \
-    audiopd.rc
-
 # Audio
 PRODUCT_PACKAGES += \
     sound_trigger.primary.sm8450 \
