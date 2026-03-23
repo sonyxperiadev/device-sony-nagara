@@ -70,18 +70,8 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 TARGET_USE_QTI_BT_STACK := true
 WCNSS_FILTER_USES_SIBS := true
 
-# Audio
-AUDIO_FEATURE_ENABLED_AGM_HIDL := true
-AUDIO_FEATURE_ENABLED_DLKM := false
-AUDIO_FEATURE_ENABLED_DTS_EAGLE := false
-AUDIO_FEATURE_ENABLED_GEF_SUPPORT := true
-AUDIO_FEATURE_ENABLED_GKI := true
-AUDIO_FEATURE_ENABLED_HW_ACCELERATED_EFFECTS := false
-AUDIO_FEATURE_ENABLED_INSTANCE_ID := true
-AUDIO_FEATURE_ENABLED_PAL_HIDL := true
-BOARD_USES_ALSA_AUDIO := true
-TARGET_USES_AUDIOREACH := true
-TARGET_USES_QCOM_MM_AUDIO := true
+# Audioreach
+AUDIO_FEATURE_ENABLED_DYNAMIC_LOG := true
 
 # Display
 TARGET_HAS_HDR_DISPLAY := true
@@ -114,10 +104,9 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_COPY_FILES += \
-    $(SONY_ROOT)/vendor/etc/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
+    $(SONY_ROOT)/vendor/etc/audio_module_config_primary.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_module_config_primary.xml \
     $(SONY_ROOT)/vendor/etc/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     $(SONY_ROOT)/vendor/etc/card-defs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/card-defs.xml \
-    $(SONY_ROOT)/vendor/etc/primary_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/primary_audio_policy_configuration.xml \
     $(SONY_ROOT)/vendor/etc/resourcemanager_waipio_qrd.xml:$(TARGET_COPY_OUT_VENDOR)/etc/resourcemanager_waipio_qrd.xml \
     $(SONY_ROOT)/vendor/etc/usecaseKvManager.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usecaseKvManager.xml
 
@@ -181,11 +170,6 @@ PRODUCT_PACKAGES += \
     init.nagara \
     init.nagara.pwr \
     ueventd
-
-# Audio
-PRODUCT_PACKAGES += \
-    sound_trigger.primary.sm8450 \
-    audio.primary.sm8450
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -340,26 +324,41 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.qcom.bluetooth.soc=hastings
 
-# Audio - QCOM HAL
+# Audioreach QTI HAL
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio_hal.period_size=192 \
     vendor.audio.ull_record_period_multiplier=2 \
-    vendor.audio.offload.buffer.size.kb=32 \
-    vendor.audio.safx.pbe.enabled=false \
+    vendor.audio.offload.track.enable=true \
+    vendor.audio.offload.multiple.enabled=false \
+    vendor.audio.flac.sw.decoder.24bit=true \
     ro.bluetooth.a2dp_offload.supported=true \
     persist.bluetooth.a2dp_offload.disabled=false \
+    vendor.audio.use.sw.alac.decoder=true \
+    vendor.audio.use.sw.ape.decoder=true \
+    vendor.audio.use.sw.mpegh.decoder=true \
+    vendor.audio.hw.aac.encoder=false \
+    vendor.audio.adm.buffering.ms=2 \
     vendor.audio.volume.headset.gain.depcal=true \
-    debug.c2.use_dmabufheaps=1
+    vendor.audio.c2.preferred=true \
+    debug.c2.use_dmabufheaps=1 \
+    vendor.qc2audio.suspend.enabled=true \
+    vendor.qc2audio.per_frame.flac.dec.enabled=true \
+    vendor.audio.hal.output.suspend.supported=true \
+    persist.vendor.bt.aac_frm_ctl.enabled=true \
+    persist.vendor.bt.aac_vbr_frm_ctl.enabled=true \
+    vendor.audio.hdr.spf.record.enable=false \
+    vendor.audio.hdr.record.enable=false \
+    vendor.audio.offload.buffer.size.kb=32 \
+    vendor.audio.compress_capture.enabled=true \
+    vendor.audio.compress_capture.aac=true
 
-# Audio dynamic feature flags
+# Audioreach dynamic feature flags
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.feature.a2dp_offload.enable=true \
-    vendor.audio.feature.afe_proxy.enable=true \
     vendor.audio.feature.battery_listener.enable=true \
     vendor.audio.feature.hfp.enable=true \
     vendor.audio.feature.kpi_optimize.enable=true \
-    vendor.audio.feature.dmabuf.cma.memory.enable=false \
-    vendor.audio.hdr.record.enable=false
+    vendor.audio.feature.dmabuf.cma.memory.enable=false
 
 # USB controller setup
 PRODUCT_PROPERTY_OVERRIDES += \
