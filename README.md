@@ -14,4 +14,4 @@ Android device configuration for the nagara platform (**SM8450**).
 
 ### Build instructions
 
-https://developer.sony.com/develop/open-devices/guides/aosp-build-instructions/
+https://opendevices.sony.net/aosp-on-xperia-open-devices/guides/aosp-build-instructions/
