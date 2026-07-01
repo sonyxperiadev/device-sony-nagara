@@ -26,10 +26,6 @@ TARGET_BOARD_PLATFORM := $(TARO)
 
 SONY_ROOT := $(PLATFORM_COMMON_PATH)/rootdir
 
-# Overlay
-DEVICE_PACKAGE_OVERLAYS += \
-    $(PLATFORM_COMMON_PATH)/overlay
-
 # Build recovery image
 PRODUCT_BUILD_RECOVERY_IMAGE := true
 
@@ -163,6 +159,11 @@ PRODUCT_COPY_FILES += \
 # CAMX config
 PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/vendor/etc/camera/camxoverridesettings.txt:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camxoverridesettings.txt
+
+# Platform Runtime Resource Overlays
+PRODUCT_PACKAGES += \
+    FrameworkOverlayNagara \
+    SettingsOverlayNagara
 
 # Platform specific init
 PRODUCT_PACKAGES += \
