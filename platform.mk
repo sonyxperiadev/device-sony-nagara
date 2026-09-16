@@ -364,10 +364,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # USB controller setup
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.boot.usb.dwc3=a600000.ssusb \
-    sys.usb.controller=a600000.dwc3 \
-    sys.usb.rndis.func.name=gsi
+    vendor.usb.controller=a600000.dwc3
 
-#WiFi MAC address path
+# WiFi MAC address path
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.wifi.addr_path=/data/vendor/wifi/wlan_mac.bin
 
