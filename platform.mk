@@ -71,6 +71,8 @@ AUDIO_FEATURE_ENABLED_DYNAMIC_LOG := true
 
 # Display
 TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
+# Inject DPU810 support into libdisplayqos
+$(call soong_config_set,qtidisplay,displayqos_shim,true)
 
 # Camera
 TARGET_USES_QTI_CAMERA := true
