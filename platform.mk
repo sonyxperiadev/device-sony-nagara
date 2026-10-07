@@ -103,6 +103,10 @@ PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/vendor/etc/resourcemanager_waipio_qrd.xml:$(TARGET_COPY_OUT_VENDOR)/etc/resourcemanager_waipio_qrd.xml \
     $(SONY_ROOT)/vendor/etc/usecaseKvManager.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usecaseKvManager.xml
 
+# Display
+PRODUCT_COPY_FILES += \
+    $(SONY_ROOT)/vendor/etc/display/DPU8__.xml:$(TARGET_COPY_OUT_VENDOR)/etc/display/DPU8__.xml
+
 # Media
 PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/vendor/etc/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
