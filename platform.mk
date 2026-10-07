@@ -200,6 +200,10 @@ DEVICE_MANIFEST_FILE += \
     $(PLATFORM_COMMON_PATH)/vintf/android.hardware.security.keymint-service-qti.xml \
     $(PLATFORM_COMMON_PATH)/vintf/vendor.qti.hardware.qseecom_v1.0.xml
 
+# Lights
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.lights.service
+
 # NFC Firmware
 PRODUCT_PACKAGES += \
     libsn100u_fw
