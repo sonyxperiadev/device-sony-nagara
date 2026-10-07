@@ -206,7 +206,8 @@ PRODUCT_PACKAGES += \
 
 # Sensors init
 PRODUCT_PACKAGES += \
-    sdsp-sensorspdr.rc
+    sdsp-sensorspdr.rc \
+    slpistart.rc
 
 # SPU
 PRODUCT_PACKAGES += \
