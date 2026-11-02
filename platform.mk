@@ -192,7 +192,7 @@ PRODUCT_PACKAGES += \
     android.hardware.security.keymint-service-qti.rc \
     vendor.qti.hardware.qseecom@1.0-service.rc
 
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
     ro.crypto.dm_default_key.options_format.version=2 \
     ro.crypto.volume.metadata.method=dm-default-key
 
@@ -307,7 +307,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
 
 # Look for camera.qcom.so instead of camera.$(BOARD_TARGET_PLATFORM).so
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
     ro.hardware.camera=qcom
 
 # QCOM Bluetooth
@@ -315,15 +315,15 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl-qti \
     android.hardware.bluetooth@1.0-service-qti
 
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.qcom.bluetooth.soc=hastings
 
 # Legacy BT property (will be removed in S)
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
     vendor.qcom.bluetooth.soc=hastings
 
 # Audioreach QTI HAL
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
     vendor.audio_hal.period_size=192 \
     vendor.audio.ull_record_period_multiplier=2 \
     vendor.audio.offload.track.enable=true \
@@ -351,7 +351,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.compress_capture.aac=true
 
 # Audioreach dynamic feature flags
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
     vendor.audio.feature.a2dp_offload.enable=true \
     vendor.audio.feature.battery_listener.enable=true \
     vendor.audio.feature.hfp.enable=true \
@@ -359,16 +359,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.feature.dmabuf.cma.memory.enable=false
 
 # USB controller setup
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
     ro.boot.usb.dwc3=a600000.ssusb \
     vendor.usb.controller=a600000.dwc3
 
 # WiFi MAC address path
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.wifi.addr_path=/data/vendor/wifi/wlan_mac.bin
 
 # Display
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
     persist.demo.hdmirotationlock=false \
     persist.sys.sf.color_saturation=1.0 \
     persist.sys.sf.color_mode=9 \
@@ -428,7 +428,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.gralloc.hw_supports_ubwcp=0
 
 # Display - HDR/WCG
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
     ro.surface_flinger.has_wide_color_display=true \
     ro.surface_flinger.has_HDR_display=true \
     ro.surface_flinger.use_color_management=true \
@@ -442,11 +442,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.supports_background_blur=1
 
 # Gatekeeper
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
     vendor.gatekeeper.disable_spu=true
 
 # DSP charger
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
     vendor.dsp.charger=1
 
 $(call inherit-product, device/sony/common/common.mk)
