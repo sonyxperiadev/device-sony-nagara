@@ -454,4 +454,8 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_VENDOR_PROPERTIES += \
     vendor.dsp.charger=1
 
+# Stock Keeping Unit (SKU)
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.boot.product.vendor.sku=taro
+
 $(call inherit-product, device/sony/common/common.mk)
