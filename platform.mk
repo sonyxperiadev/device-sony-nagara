@@ -445,10 +445,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.surface_flinger.max_virtual_display_dimension=4096 \
     ro.surface_flinger.supports_background_blur=1
 
-# Media
-PRODUCT_VENDOR_PROPERTIES += \
-    vendor.media.target_variant=_taro
-
 # Gatekeeper
 PRODUCT_VENDOR_PROPERTIES += \
     vendor.gatekeeper.disable_spu=true
